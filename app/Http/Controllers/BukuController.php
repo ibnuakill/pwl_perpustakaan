@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Buku;
 
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class BukuController extends Controller
 {
@@ -23,6 +24,13 @@ class BukuController extends Controller
     public function create()
     {
         return view('buku.create');
+    }
+
+    public function exportPdf()
+    {
+        $laporan = Buku::all();
+        $pdf = Pdf::loadView('buku.laporan', ['laporans' => Buku::all()]);
+        return $pdf->download('books_report.pdf');
     }
 
     /**

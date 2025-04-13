@@ -9,3 +9,5 @@ Route::resource('buku', BukuController::class);
 //start route laporan pinjam buku
 Route::get('/laporan-pinjam', [TransaksiPinjamBukuController::class, 'laporan'])->name('laporan.pinjam');
 //end route laporan pinjam buku
+
+Route::get('/ekspor', [BukuController::class, 'exportPdf'])->name('books.export.pdf');

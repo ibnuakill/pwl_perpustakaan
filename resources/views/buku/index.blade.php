@@ -11,6 +11,7 @@
 <body>
     <h1>Daftar Buku</h1>
     <a href="{{ route('buku.create') }}">Tambah Buku</a>
+    <a href="{{ route('books.export.pdf') }}">Ekspor</a>
     <table border="1">
         <tr>
             <th>Kode Buku</th>
